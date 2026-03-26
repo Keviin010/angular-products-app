@@ -1,0 +1,90 @@
+<div class="products-wrapper">
+
+  <div class="toast" *ngIf="showSuccess">
+    <span class="toast-icon">✓</span>
+    {{ successMessage }}
+  </div>
+
+  <div class="products-header">
+    <div class="header-accent"></div>
+    <div class="header-top">
+      <div>
+        <h2 class="products-title">{{ title }}</h2>
+        <p class="products-subtitle">{{ products.length }} artículos disponibles</p>
+      </div>
+      <button class="btn-add" (click)="openAddForm()">+ Agregar</button>
+    </div>
+  </div>
+
+  <div class="form-container" *ngIf="showForm">
+    <h3 class="form-title">{{ isEditing ? 'Editar producto' : 'Nuevo producto' }}</h3>
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label>Nombre</label>
+        <input
+          type="text"
+          [(ngModel)]="formData.name"
+          placeholder="Nombre del producto"
+          [class.input-error]="errors.name"
+        />
+        <span class="error-msg" *ngIf="errors.name">{{ errors.name }}</span>
+      </div>
+
+      <div class="form-group">
+        <label>Precio</label>
+        <input
+          type="number"
+          [(ngModel)]="formData.price"
+          placeholder="0"
+          [class.input-error]="errors.price"
+        />
+        <span class="error-msg" *ngIf="errors.price">{{ errors.price }}</span>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Descripción</label>
+        <input
+          type="text"
+          [(ngModel)]="formData.description"
+          placeholder="Descripción"
+          [class.input-error]="errors.description"
+        />
+        <span class="error-msg" *ngIf="errors.description">{{ errors.description }}</span>
+      </div>
+
+    </div>
+    <div class="form-actions">
+      <button class="btn-cancel" (click)="cancelForm()">Cancelar</button>
+      <button class="btn-submit" (click)="submitForm()">
+        {{ isEditing ? 'Guardar cambios' : 'Agregar producto' }}
+      </button>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <table class="products-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Producto</th>
+          <th>Descripción</th>
+          <th>Precio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td class="id-cell">{{ product.id }}</td>
+          <td class="name-cell">{{ product.name }}</td>
+          <td class="desc-cell">{{ product.description }}</td>
+          <td class="price-cell">{{ product.price | currency:'COP':'symbol':'1.0-0' }}</td>
+          <td class="actions-cell">
+            <button class="btn-edit" (click)="openEditForm(product)">Editar</button>
+            <button class="btn-delete" (click)="deleteProduct(product.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
