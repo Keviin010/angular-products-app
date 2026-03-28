@@ -40,3 +40,6 @@ Abre el navegador en `http://localhost:4200/`. La aplicacion se recarga automati
 - Spring Data JPA + MySQL
 - Autenticacion JWT
 
+## Autor 
+Kevin Royo 
+
