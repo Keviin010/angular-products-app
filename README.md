@@ -20,3 +20,6 @@ Abre el navegador en `http://localhost:4200/`.
 ## Rama base
 
 Esta rama se deriva de `main` que contiene el listado de productos.
+
+## Autor 
+Kevin Royo 
