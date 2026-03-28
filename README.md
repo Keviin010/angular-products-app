@@ -15,3 +15,6 @@ En construccion. Esta rama conectara el frontend Angular con la API de Spring Bo
 ## Rama base
 
 Esta rama se deriva de `feature/form` que contiene el formulario con validaciones.
+
+## Autor
+Kevin Royo 
