@@ -41,5 +41,5 @@ Abre el navegador en `http://localhost:4200/`. La aplicacion se recarga automati
 - Autenticacion JWT
 
 ## Autor 
-Kevin Royo.
+Kevin Royo
 
