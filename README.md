@@ -2,7 +2,7 @@
 
 Frontend para gestion de productos construido con Angular 17+.
 
-> Backend REST API disponible en [angular-products-backend](https://github.com/Keviin010/angular-products-backend)
+> Backend REST API disponible en [angular-products-backend](https://github.com/Keviin010/angular-products-backend).
 
 ## Servidor de desarrollo
 ```bash
